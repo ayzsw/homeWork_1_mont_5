@@ -64,5 +64,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
                 self.characterImageView.image = image
             }
         }
+        characterImageView.alpha = 0
+        UIView.animated(widthDuration:3){
+            self.characterImageView.alpha = 1
     }
 }
