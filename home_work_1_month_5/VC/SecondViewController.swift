@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SecondViewController: UIViewController {
+class DetailsInfo: UIViewController {
     
     public let imgview = UIImageView()
     
@@ -20,7 +20,7 @@ class SecondViewController: UIViewController {
         return label
     }()
     
-    var ff5: Character?
+    var character: Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SecondViewController: UIViewController {
         addConstraint()
         imgview.layer.cornerRadius = 20
         
-        if let imageName = ff5?.image {
+        if let imageName = character?.image {
                 //imgview.image = UIImage(named: imageName)
             ImageDownloader.downloadImage(with: imageName) { [weak self] image in
                 guard let self = self else { return }
@@ -39,7 +39,7 @@ class SecondViewController: UIViewController {
                 }
             }
         }
-        labelName.text = ff5?.name
+        labelName.text = character?.name
     }
     private func addConstraint(){
         imgview.snp.makeConstraints { make in
